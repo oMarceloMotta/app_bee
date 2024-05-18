@@ -1,0 +1,79 @@
+.custom-badge {
+  background: #f18718;
+  color: white;
+  margin-left: 10px;
+  font-size: 10px;
+  height: 17px;
+  width: 32px;
+  border-radius: 10%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-icon-plus {
+  color: orange;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.custom-icon-notification {
+  color: orange;
+  background-color: black;
+  border-radius: 50%;
+}
+.container {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.title {
+  font-size: 18px;
+}
+.scroll-container {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+.icon-label-container {
+  display: flex;
+  align-items: center;
+  background-color: #050505;
+  padding: 10px;
+  justify-content: center;
+  height: 50px;
+  width: 80%;
+  color: orange;
+  font-size: 10px;
+  margin: 0 auto;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+
+.circular-icon {
+  border: 2px solid orange;
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: black;
+}
+
+.notification {
+  width: 10px;
+  height: 10px;
+  background: rgb(137, 255, 137); /* Cor de fundo verde claro */
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 50%; /* Para tornar o elemento circular */
+  display: flex; /* Para centralizar o conteúdo dentro do círculo */
+  justify-content: center; /* Para centralizar horizontalmente */
+  align-items: center; /* Para centralizar verticalmente */
+}
+
+.card {
+  width: 75%;
+  margin-right: 10px;
+  height: 200px;
+}

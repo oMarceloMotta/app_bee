@@ -1,0 +1,23 @@
+<ion-content class="ion-padding" text-center>
+  <div class="signin-container">
+    <h2>Login</h2>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">E-mail:</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="signinForm.get('email')?.invalid && signinForm.get('email')?.touched">
+        <ion-text color="danger">E-mail é obrigatório</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha:</ion-label>
+        <ion-input type="password" formControlName="password" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="signinForm.get('password')?.invalid && signinForm.get('password')?.touched">
+        <ion-text color="danger">Senha é obrigatória</ion-text>
+      </ion-item>
+      <ion-button type="submit" [disabled]="signinForm.invalid" expand="block">Entrar</ion-button>
+      <ion-button (click)="navRegistrase()" fill="clear">Registrar-se</ion-button>
+    </form>
+  </div>
+</ion-content>

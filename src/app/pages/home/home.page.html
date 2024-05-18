@@ -1,0 +1,61 @@
+<ion-header no-border>
+  <ion-toolbar style="border-bottom-left-radius: 10%; border-bottom-right-radius: 10%">
+    <ion-toolbar style="--background:none" no-border [translucent]="true">
+      <ion-buttons slot="start">
+        <ion-menu-button style="color: white;"> </ion-menu-button>
+      </ion-buttons>
+      <ion-title align="center"><img src="/assets/icon/logo.png" alt="Logo"></ion-title>
+      <ion-buttons slot="end">
+        <ion-button style="background-color: black; border-radius: 50%;">
+          <ion-icon class="custom-icon-notification" name="notifications-sharp"></ion-icon>
+          <div class="notification"></div>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <div style="display:flex;  flex-direction: column;">
+      <div style="display:flex;  align-items:center; justify-content: center; padding: 50px;">
+        <ion-avatar slot="start">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-title>
+          <ion-label class="ion-text-start">
+            <h2 style="color: white; font-size: 21px;">{{nome}}</h2>
+            <p style="color: rgb(63, 14, 143)">Nivel Roxo</p>
+          </ion-label>
+        </ion-title>
+      </div>
+      <div class="icon-label-container">
+        <ion-icon name="body" class="circular-icon"></ion-icon>
+        <ion-label>MEU CORPO</ion-label>
+        <ion-icon name="trophy" class="circular-icon"></ion-icon>
+        <ion-label>OBJETIVOS E CONQUISTAS</ion-label>
+      </div>
+
+    </div>
+  </ion-toolbar>
+  <div>
+
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="black">
+  <div class="container">
+    <div *ngFor="let section of sections">
+      <div style="display: flex; align-items: center; margin: 10px 0px;">
+        <ion-label class="title">{{ section.sectionTitle }}</ion-label>
+        <ion-icon *ngIf="section.sectionTitle === 'PERSONAL ONLINE'" class="custom-icon-plus"
+          name="add-circle-outline"></ion-icon>
+        <ion-badge *ngIf="section.newBadge" class="custom-badge">NOVO</ion-badge>
+      </div>
+      <div class="scroll-container">
+        <app-card *ngFor="let item of section.items" [title]="item.title" [subtitle]="item.subtitle"
+          [image]="item.image" class="card">
+        </app-card>
+        <app-register-card *ngIf="section.register" [title]="section.register.title"
+          [subtitle]="section.register.subtitle" [image]="section.register.image" class="mr-10">
+        </app-register-card>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
