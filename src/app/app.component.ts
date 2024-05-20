@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { StorageService } from './services/storage.service';
 
 register();
 
@@ -13,8 +14,12 @@ export class AppComponent {
 
   public appPages = [
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Sair', url: '/signin', icon: 'log-out' },
+    {
+      title: 'Sair', url: '/signin', icon: 'log-out', click: () => {
+        this.storage.clear();
+      }
+    },
   ];
-  constructor() {
+  constructor(private storage: StorageService) {
   }
 }

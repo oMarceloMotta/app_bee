@@ -98,14 +98,7 @@ export class HomePage implements OnInit {
   }
   async ngOnInit() {
     const user = await this.storage.get('user');
-    console.log(user);
-    if (user == null) {
-      this.navCtrl.navigateRoot('/signin');
-    } else {
-      this.email = user.user.email;
-      this.nome = user.user.email.split('@')[0];
-    }
+    this.email = user.user.email;
+    this.nome = user.user.email.split('@')[0];
   }
-
-
 }

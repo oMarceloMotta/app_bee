@@ -10,6 +10,7 @@ import { firebaseConfig } from './app.firebase.config';
 import { ComponentsModule } from './components/index.module';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore(),),
-    provideAuth(() => getAuth()),
+    provideAuth(() => getAuth(), AuthService),
   ], bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
